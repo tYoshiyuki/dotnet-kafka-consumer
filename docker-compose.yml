@@ -7,7 +7,7 @@ services:
     environment:
       KAFKA_NODE_ID: 1
       KAFKA_PROCESS_ROLES: broker,controller
-      # PLAINTEXT_INTERNAL -> kafka-ui用、EXTERNAL -> .NETアプリケーション接続用
+      # PLAINTEXT_INTERNAL -> kafka-ui用、EXTERNAL -> .NETアプリケーション接続用 (※ ローカル接続用に全IPアドレスからのアクセスを許可)
       KAFKA_LISTENERS: PLAINTEXT://localhost:9092,CONTROLLER://localhost:9093,PLAINTEXT_INTERNAL://broker:29092,EXTERNAL://0.0.0.0:39092
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://broker:29092,EXTERNAL://localhost:39092
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
